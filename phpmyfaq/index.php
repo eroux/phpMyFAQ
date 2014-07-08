@@ -758,7 +758,7 @@ $httpHeader = new PMF_Helper_Http();
 $httpHeader->setContentType('text/html');
 $httpHeader->addHeader();
 
-if (!DEBUG) {
+if (!DEBUG && $faqConfig->get('main.enableGzip') == false) {
     ob_start('ob_gzhandler');
 }
 
